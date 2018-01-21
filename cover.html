@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
+
+<script language="JavaScript">
+grphcs=new Array(1);
+Image0=new Image();
+Image0.src=grphcs[0]="http://c.blog.xuite.net/c/f/7/b/11732000/blog_698/txt/23637703/0.gif";
+
+Amount=8;
+Ypos=new Array();
+Xpos=new Array();
+Speed=new Array();
+Step=new Array();
+Cstep=new Array();
+ns=(document.layers)?1:0;
+ns6=(document.getElementById&&!document.all)?1:0;
+
+if (ns){
+for (i = 0; i < Amount; i++){
+var P=Math.floor(Math.random()*grphcs.length);
+rndPic=grphcs[P];
+document.write("<LAYER NAME='sn"+i+"' LEFT=0 TOP=0><img src="+rndPic+"></LAYER>");
+}
+}
+else{
+document.write('<div style="position:absolute;top:0px;left:0px;z-index:999;"><div style="position:relative; z-index:999;">');
+for (i = 0; i < Amount; i++){
+var P=Math.floor(Math.random()*grphcs.length);
+rndPic=grphcs[P];
+document.write('<img id="si'+i+'" src="'+rndPic+'" style="position:relative;top:0px;left:0px; z-index:999;">');
+}
+document.write('</div></div>');
+}
+WinHeight=(ns||ns6)?window.innerHeight:window.document.body.clientHeight;
+WinWidth=(ns||ns6)?window.innerWidth-70:window.document.body.clientWidth;
+for (i=0; i < Amount; i++){                                                                
+ Ypos[i] = Math.round(Math.random()*WinHeight);
+ Xpos[i] = Math.round(Math.random()*WinWidth);
+ Speed[i]= Math.random()*5+3;
+ Cstep[i]=0;
+ Step[i]=Math.random()*0.1+0.05;
+}
+function fall(){
+var WinHeight=(ns||ns6)?window.innerHeight:window.document.body.clientHeight;
+var WinWidth=(ns||ns6)?window.innerWidth-70:window.document.body.clientWidth;
+var hscrll=(ns||ns6)?window.pageYOffset:document.body.scrollTop;
+var wscrll=(ns||ns6)?window.pageXOffset:document.body.scrollLeft;
+for (i=0; i < Amount; i++){
+   sy = Speed[i]*Math.sin(90*Math.PI/180);
+   sx = Speed[i]*Math.cos(Cstep[i]);
+   Ypos[i]+=sy;
+   Xpos[i]+=sx; 
+   if (Ypos[i] > WinHeight){
+      Ypos[i]=-60;
+      Xpos[i]=Math.round(Math.random()*WinWidth);
+      Speed[i]=Math.random()*5+3;
+   }
+   if (ns){
+      document.layers['sn'+i].left=Xpos[i];
+      document.layers['sn'+i].top=Ypos[i]+hscrll;
+   }
+   else if (ns6){
+      document.getElementById("si"+i).style.left=Math.min(WinWidth,Xpos[i]);
+      document.getElementById("si"+i).style.top=Ypos[i]+hscrll;
+   }
+   else{
+      eval("document.all.si"+i).style.left=Xpos[i];
+      eval("document.all.si"+i).style.top=Ypos[i]+hscrll;
+   } 
+   Cstep[i]+=Step[i];
+}
+setTimeout('fall()',200);
+}
+
+fall();
+</script>
+
+<head>
+    
+    <meta charset="UTF-8">  
+    <title> 大阪景點介紹 </title>
+    <style type="text/css">
+        body {
+          color:rgb(255, 0, 140);
+          background-color:rgb(248, 159, 204) }
+    </style>
+</head>
+<body>  
+        <div class="container">
+               <h1> <p class="text-center">大阪推薦景點!</p></h1>  
+         </div>    
+        <div class="container">
+        <h2>大阪南區(難波)</h2>  
+        <div class="container">
+            <P> 大阪地標：道頓堀、心齋橋、戎橋筋交匯口
+
+                道頓堀：大阪的美食街，從平價壽司、大阪燒、章魚燒、拉麵、蟹肉料理等必吃餐廳都在這條街上，運河的兩旁有很多美食餐廳及戲院、娛樂場所。
+
+                    心齋橋：整條的逛街購物商店街，從便宜藥妝、服飾到知名H＆M、Uniqlo等品牌，都來這裡找就對了。
+                    
+                    戎僑筋：時裝店、首飾店、鞋店、水果店、餐飲店都有，主要特色則是有電影院、遊藝中心。
+            </P>
+            <style type="text/css">
+                body {
+                   width:1200px; }
+           </style>
+           <img src="http://farm8.staticflickr.com/7318/27239450584_0e995aa369_c.jpg" class="img-responsive" alt="Responsive image" />
+  </div>
+        
+</body>
+<body>  
+        <h2>日本環球影城</h2>  
+        <div class="container">
+            <P> 日本環球影城位於日本大阪市此花區，是世界4個環球影城主題公園之一，1998年10月28日由當時尚未擔任加州州長的美國動作演員阿諾·史瓦辛格主持動工儀式，2001年3月31日開幕。其設計與美國奧蘭多的環球影城相近，有部份機動遊戲相同。
+                </P>
+                <style type="text/css">
+                    body {
+                       width:1200px; }
+               </style>
+                <img src="http://travelheadline.com/wp-content/uploads/2016/01/00002978.jpg"  width="640" class="img-responsive" alt="Responsive image"/>
+        </div>    
+        
+</body>
+<body>  
+        <h2>大阪城公園</h2>  
+        <div class="container">
+             <P> 公園位於大阪的中央，總面積達105.6公頃，規模宏大。園內除了有大阪城天守閣等歷史性建築之外，還有種有約600株櫻花的西之丸庭園、100品種約1270株梅花怒放的梅林等眾多景點，您可以觀賞到四季不同的花卉。另外，大阪城戶外音樂堂和大阪城會館也經常舉辦音樂會。此外還有弓道場、修道館等體育設施。園內每年還舉辦春秋兩季的花木市集、西之丸庭園的賞夜櫻等活動。
+            </P>
+            <style type="text/css">
+                body {
+                   width:1200px; }
+           </style>
+           <img src="http://www.osaka-info.jp/ch_t/facilities/assets_c/2015/04/0000588-thumb-2756x1837-19397.jpg"  width="640" class="img-responsive" alt="Responsive image"/>
+              </div>  
+       
+              </div>
+        
+</body>
+</html>
